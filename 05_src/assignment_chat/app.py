@@ -1,4 +1,4 @@
-from course_chat.main import get_graph
+from assignment_chat.main import get_graph
 from langchain_core.messages import HumanMessage, AIMessage
 import gradio as gr
 from dotenv import load_dotenv
