@@ -8,10 +8,10 @@ import json
 import requests
 import os
 
-from course_chat.prompts import return_instructions
-from course_chat.tools_animals import get_cat_facts, get_dog_facts
-from course_chat.tools_horoscope import get_horoscope
-from course_chat.tools_music import recommend_albums
+from assignment_chat.prompts import return_instructions
+from assignment_chat.tools_facts import get_fact
+from assignment_chat.tools_jokes import get_joke
+from assignment_chat.tools_music import recommend_albums
 from utils.logger import get_logger
 
 
@@ -23,7 +23,7 @@ load_dotenv(".secrets")
 chat_agent = init_chat_model(
     "openai:gpt-4o-mini",
 )
-tools = [get_cat_facts, get_dog_facts, recommend_albums, get_horoscope]
+tools = [get_fact, get_joke, recommend_albums]
 
 instructions = return_instructions()
 
